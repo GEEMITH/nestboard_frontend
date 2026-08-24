@@ -137,4 +137,1331 @@
   }
 }
 
+input,
+textarea,
+select {
+  color: #111827 !important;
+  background-color: #ffffff;
+  caret-color: #ea580c;
+  -webkit-text-fill-color: #111827;
+}
 
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af !important;
+  -webkit-text-fill-color: #9ca3af;
+  opacity: 1;
+}
+
+select option {
+  color: #111827;
+  background: #ffffff;
+}
+
+/* =========================================================
+   NestBoard visibility fixes
+   ========================================================= */
+
+/* Make normal form controls readable everywhere */
+input,
+textarea,
+select {
+  color: #111827 !important;
+  caret-color: #ea580c !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af !important;
+  -webkit-text-fill-color: #9ca3af !important;
+  opacity: 1 !important;
+}
+
+/* Default buttons */
+button {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+/* Buttons that explicitly use white text */
+button.text-white,
+button[class~="text-white"] {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* White links used as buttons */
+a.text-white,
+a[class~="text-white"] {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Shadcn default button */
+[data-slot="button"][data-variant="default"] {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Shadcn destructive button */
+[data-slot="button"][data-variant="destructive"] {
+  color: #dc2626 !important;
+  -webkit-text-fill-color: #dc2626 !important;
+}
+
+/* Shadcn outline/secondary/ghost buttons */
+[data-slot="button"][data-variant="outline"],
+[data-slot="button"][data-variant="secondary"],
+[data-slot="button"][data-variant="ghost"] {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+/* Make button children inherit the correct color */
+button span,
+button svg,
+button strong,
+button small {
+  -webkit-text-fill-color: currentColor;
+}
+
+/* Keep disabled text readable */
+button:disabled {
+  -webkit-text-fill-color: currentColor !important;
+}
+
+/* Select options */
+select option {
+  color: #111827 !important;
+  background: #ffffff !important;
+}
+
+/* =========================================================
+   NESTBOARD BOOKING MODAL - LIGHT UI FIX
+   ========================================================= */
+
+/*
+ * Force booking/dialog surfaces to use the same clean
+ * light appearance as the property details page.
+ */
+
+[role="dialog"] {
+  background: #ffffff !important;
+  color: #111827 !important;
+  border-color: #e5e7eb !important;
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.18) !important;
+}
+
+/* Dialog headings */
+[role="dialog"] h1,
+[role="dialog"] h2,
+[role="dialog"] h3,
+[role="dialog"] h4 {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+/* Dialog normal text */
+[role="dialog"] p,
+[role="dialog"] label {
+  color: #4b5563 !important;
+  -webkit-text-fill-color: #4b5563 !important;
+}
+
+/* Dialog small labels */
+[role="dialog"] .text-xs,
+[role="dialog"] .text-sm {
+  color: #6b7280 !important;
+  -webkit-text-fill-color: #6b7280 !important;
+}
+
+/* Important booking title */
+[role="dialog"] h1,
+[role="dialog"] h2 {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  font-weight: 700 !important;
+}
+
+/* Close button */
+[role="dialog"] button[aria-label*="Close"],
+[role="dialog"] button[aria-label*="close"] {
+  color: #6b7280 !important;
+  -webkit-text-fill-color: #6b7280 !important;
+  background: transparent !important;
+}
+
+[role="dialog"] button[aria-label*="Close"]:hover,
+[role="dialog"] button[aria-label*="close"]:hover {
+  color: #111827 !important;
+  background: #f3f4f6 !important;
+}
+
+/* Booking inputs */
+[role="dialog"] input,
+[role="dialog"] select,
+[role="dialog"] textarea {
+  background: #ffffff !important;
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  caret-color: #f97316 !important;
+
+  border: 1px solid #d1d5db !important;
+  border-radius: 12px !important;
+}
+
+[role="dialog"] input::placeholder,
+[role="dialog"] textarea::placeholder {
+  color: #9ca3af !important;
+  -webkit-text-fill-color: #9ca3af !important;
+  opacity: 1 !important;
+}
+
+[role="dialog"] input:focus,
+[role="dialog"] select:focus,
+[role="dialog"] textarea:focus {
+  border-color: #f97316 !important;
+  outline: none !important;
+  box-shadow:
+    0 0 0 3px rgba(249, 115, 22, 0.12) !important;
+}
+
+/* Select dropdown text */
+[role="dialog"] select option {
+  background: #ffffff !important;
+  color: #111827 !important;
+}
+
+/* =========================================================
+   ROOM SELECTION CARDS
+   ========================================================= */
+
+[role="dialog"] button {
+  -webkit-text-fill-color: currentColor;
+}
+
+/* Room buttons/cards */
+[role="dialog"] button:not(
+  [aria-label*="Close"]
+):not(
+  [aria-label*="close"]
+) {
+  color: #111827;
+}
+
+/*
+ * Make room selection areas clearly visible.
+ */
+[role="dialog"] button.border,
+[role="dialog"] [class*="border"] {
+  border-color: #e5e7eb;
+}
+
+/* Room names */
+[role="dialog"] button.border span,
+[role="dialog"] button.border p {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+/* Free-seat text */
+[role="dialog"] .text-green-600,
+[role="dialog"] .text-green-500 {
+  color: #16a34a !important;
+  -webkit-text-fill-color: #16a34a !important;
+}
+
+/* Orange room selection */
+[role="dialog"] .text-orange-500,
+[role="dialog"] .text-orange-600,
+[role="dialog"] .text-orange-700 {
+  color: #ea580c !important;
+  -webkit-text-fill-color: #ea580c !important;
+}
+
+/* =========================================================
+   PRICE SUMMARY
+   ========================================================= */
+
+[role="dialog"] [class*="bg-gray"] {
+  color: #111827;
+}
+
+/* Summary labels */
+[role="dialog"] .text-gray-500 {
+  color: #6b7280 !important;
+  -webkit-text-fill-color: #6b7280 !important;
+}
+
+/* Summary values */
+[role="dialog"] .text-gray-900 {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+/* Total price */
+[role="dialog"] .text-orange-600,
+[role="dialog"] .text-orange-500 {
+  color: #ea580c !important;
+  -webkit-text-fill-color: #ea580c !important;
+}
+
+/* =========================================================
+   PRIMARY BOOKING BUTTON
+   ========================================================= */
+
+[role="dialog"] button.bg-orange-500,
+[role="dialog"] button.bg-orange-600,
+[role="dialog"] button[class*="bg-orange"] {
+  background: #f97316 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-color: #f97316 !important;
+  font-weight: 600 !important;
+}
+
+[role="dialog"] button.bg-orange-500:hover,
+[role="dialog"] button.bg-orange-600:hover,
+[role="dialog"] button[class*="bg-orange"]:hover {
+  background: #ea580c !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Disabled reserve button */
+[role="dialog"] button:disabled {
+  opacity: 0.55;
+}
+
+/* =========================================================
+   BOOKING MODAL BACKDROP
+   ========================================================= */
+
+[role="dialog"]::backdrop {
+  background: rgba(15, 23, 42, 0.55);
+}
+
+/* =========================================================
+   ROOM CARDS - EXTRA READABILITY
+   ========================================================= */
+
+[role="dialog"] .room-card,
+[role="dialog"] [data-room-card] {
+  background: #ffffff !important;
+  color: #111827 !important;
+  border-color: #e5e7eb !important;
+}
+
+[role="dialog"] .room-card:hover,
+[role="dialog"] [data-room-card]:hover {
+  border-color: #f97316 !important;
+  background: #fff7ed !important;
+}
+
+/* Selected room */
+[role="dialog"] .room-card.selected,
+[role="dialog"] [data-room-card][data-selected="true"] {
+  border-color: #f97316 !important;
+  background: #fff7ed !important;
+}
+
+/* =========================================================
+   BOOKING MODAL SCROLLBAR
+   ========================================================= */
+
+[role="dialog"] {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+[role="dialog"]::-webkit-scrollbar {
+  width: 7px;
+}
+
+[role="dialog"]::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+[role="dialog"]::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 999px;
+}
+
+[role="dialog"]::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* ============================================================
+   NESTBOARD GLOBAL UI VISIBILITY FIX
+   Fixes invisible text across Property Details, Rooms,
+   Booking UI, buttons, cards, forms and navigation.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   BASE PAGE
+   ------------------------------------------------------------ */
+
+html,
+body,
+#root {
+  color: #111827 !important;
+  background-color: #ffffff;
+}
+
+
+/* ------------------------------------------------------------
+   HEADINGS
+   ------------------------------------------------------------ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+
+/* ------------------------------------------------------------
+   NORMAL TEXT
+   ------------------------------------------------------------ */
+
+p,
+span,
+label,
+li,
+dt,
+dd {
+  color: #374151;
+}
+
+
+/* ------------------------------------------------------------
+   TAILWIND TEXT COLORS
+   Prevent global CSS from making them invisible.
+   ------------------------------------------------------------ */
+
+.text-gray-950 {
+  color: #030712 !important;
+  -webkit-text-fill-color: #030712 !important;
+}
+
+.text-gray-900 {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+.text-gray-800 {
+  color: #1f2937 !important;
+  -webkit-text-fill-color: #1f2937 !important;
+}
+
+.text-gray-700 {
+  color: #374151 !important;
+  -webkit-text-fill-color: #374151 !important;
+}
+
+.text-gray-600 {
+  color: #4b5563 !important;
+  -webkit-text-fill-color: #4b5563 !important;
+}
+
+.text-gray-500 {
+  color: #6b7280 !important;
+  -webkit-text-fill-color: #6b7280 !important;
+}
+
+.text-gray-400 {
+  color: #9ca3af !important;
+  -webkit-text-fill-color: #9ca3af !important;
+}
+
+.text-black {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+
+/* ------------------------------------------------------------
+   WHITE TEXT
+   Keep white text visible on orange/dark buttons.
+   ------------------------------------------------------------ */
+
+.text-white {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+
+/* ------------------------------------------------------------
+   ORANGE TEXT
+   ------------------------------------------------------------ */
+
+.text-orange-400 {
+  color: #fb923c !important;
+  -webkit-text-fill-color: #fb923c !important;
+}
+
+.text-orange-500 {
+  color: #f97316 !important;
+  -webkit-text-fill-color: #f97316 !important;
+}
+
+.text-orange-600 {
+  color: #ea580c !important;
+  -webkit-text-fill-color: #ea580c !important;
+}
+
+.text-orange-700 {
+  color: #c2410c !important;
+  -webkit-text-fill-color: #c2410c !important;
+}
+
+
+/* ------------------------------------------------------------
+   GREEN TEXT
+   ------------------------------------------------------------ */
+
+.text-green-500 {
+  color: #22c55e !important;
+  -webkit-text-fill-color: #22c55e !important;
+}
+
+.text-green-600 {
+  color: #16a34a !important;
+  -webkit-text-fill-color: #16a34a !important;
+}
+
+.text-green-700 {
+  color: #15803d !important;
+  -webkit-text-fill-color: #15803d !important;
+}
+
+
+/* ------------------------------------------------------------
+   RED TEXT
+   ------------------------------------------------------------ */
+
+.text-red-500 {
+  color: #ef4444 !important;
+  -webkit-text-fill-color: #ef4444 !important;
+}
+
+.text-red-600 {
+  color: #dc2626 !important;
+  -webkit-text-fill-color: #dc2626 !important;
+}
+
+.text-red-700 {
+  color: #b91c1c !important;
+  -webkit-text-fill-color: #b91c1c !important;
+}
+
+
+/* ------------------------------------------------------------
+   WHITE CARDS
+   ------------------------------------------------------------ */
+
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+.bg-gray-50 {
+  background-color: #f9fafb !important;
+}
+
+.bg-gray-100 {
+  background-color: #f3f4f6 !important;
+}
+
+
+/* ------------------------------------------------------------
+   PROPERTY DETAIL CARDS
+   ------------------------------------------------------------ */
+
+.bg-white h1,
+.bg-white h2,
+.bg-white h3,
+.bg-white h4,
+.bg-white p,
+.bg-white span,
+.bg-white label {
+  color: inherit;
+}
+
+
+/* ------------------------------------------------------------
+   PROPERTY PAGE TEXT
+   ------------------------------------------------------------ */
+
+[class*="property"] h1,
+[class*="property"] h2,
+[class*="property"] h3,
+[class*="property"] h4 {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+
+/* ------------------------------------------------------------
+   ROOM TYPE CARDS
+   ------------------------------------------------------------ */
+
+button {
+  -webkit-text-fill-color: currentColor;
+}
+
+
+/* Room names */
+button .font-semibold,
+button .font-bold {
+  color: inherit;
+}
+
+
+/* ------------------------------------------------------------
+   OUTLINE / BORDER BUTTONS
+   ------------------------------------------------------------ */
+
+button.border,
+button[class*="border-gray"] {
+  color: #111827;
+}
+
+button.border:hover,
+button[class*="border-gray"]:hover {
+  color: #111827;
+}
+
+
+/* ------------------------------------------------------------
+   ORANGE PRIMARY BUTTONS
+   ------------------------------------------------------------ */
+
+button.bg-orange-400,
+button.bg-orange-500,
+button.bg-orange-600,
+a.bg-orange-400,
+a.bg-orange-500,
+a.bg-orange-600 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+button.bg-orange-500:hover,
+button.bg-orange-600:hover {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+
+/* ------------------------------------------------------------
+   INPUTS
+   ------------------------------------------------------------ */
+
+input,
+textarea,
+select {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  background-color: #ffffff !important;
+  caret-color: #f97316 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af !important;
+  -webkit-text-fill-color: #9ca3af !important;
+  opacity: 1 !important;
+}
+
+select option {
+  color: #111827 !important;
+  background-color: #ffffff !important;
+}
+
+
+/* ------------------------------------------------------------
+   FOCUS STATES
+   ------------------------------------------------------------ */
+
+input:focus,
+textarea:focus,
+select:focus {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  border-color: #f97316 !important;
+}
+
+
+/* ------------------------------------------------------------
+   BADGES
+   ------------------------------------------------------------ */
+
+.rounded-full {
+  /* Don't globally force a background.
+     Only make text readable when badges are used. */
+}
+
+.bg-orange-50 {
+  background-color: #fff7ed !important;
+}
+
+.bg-orange-100 {
+  background-color: #ffedd5 !important;
+}
+
+.bg-green-50 {
+  background-color: #f0fdf4 !important;
+}
+
+.bg-green-100 {
+  background-color: #dcfce7 !important;
+}
+
+
+/* ------------------------------------------------------------
+   ICON BUTTONS
+   ------------------------------------------------------------ */
+
+button svg {
+  color: currentColor;
+}
+
+
+/* ------------------------------------------------------------
+   LINKS
+   ------------------------------------------------------------ */
+
+a {
+  color: inherit;
+}
+
+
+/* ------------------------------------------------------------
+   DISABLED BUTTONS
+   ------------------------------------------------------------ */
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+
+/* ------------------------------------------------------------
+   BOOKING PANEL
+   ------------------------------------------------------------ */
+
+[role="dialog"],
+.booking-panel {
+  color: #111827 !important;
+  background-color: #ffffff !important;
+}
+
+[role="dialog"] h1,
+[role="dialog"] h2,
+[role="dialog"] h3,
+[role="dialog"] h4 {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+[role="dialog"] p,
+[role="dialog"] label {
+  color: #374151 !important;
+  -webkit-text-fill-color: #374151 !important;
+}
+
+
+/* ------------------------------------------------------------
+   BOOKING ROOM BUTTONS
+   ------------------------------------------------------------ */
+
+[role="dialog"] button {
+  -webkit-text-fill-color: currentColor;
+}
+
+[role="dialog"] button.border {
+  color: #111827 !important;
+  background-color: #ffffff !important;
+}
+
+[role="dialog"] button.border:hover {
+  color: #111827 !important;
+  background-color: #fff7ed !important;
+}
+
+
+/* ------------------------------------------------------------
+   BOOKING PRIMARY BUTTON
+   ------------------------------------------------------------ */
+
+[role="dialog"] button.bg-orange-500,
+[role="dialog"] button.bg-orange-600 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+
+/* ------------------------------------------------------------
+   NAVIGATION
+   ------------------------------------------------------------ */
+
+nav a,
+nav button {
+  -webkit-text-fill-color: currentColor;
+}
+
+
+/* ------------------------------------------------------------
+   CARD BORDERS
+   ------------------------------------------------------------ */
+
+.border-gray-100 {
+  border-color: #f3f4f6 !important;
+}
+
+.border-gray-200 {
+  border-color: #e5e7eb !important;
+}
+
+.border-gray-300 {
+  border-color: #d1d5db !important;
+}
+
+
+/* ------------------------------------------------------------
+   PROPERTY DETAILS SPECIFIC VISIBILITY
+   ------------------------------------------------------------ */
+
+/* Main property title */
+.text-3xl,
+.text-4xl,
+.text-5xl {
+  color: #111827;
+}
+
+/* Room type headings */
+.text-lg,
+.text-xl {
+  color: #111827;
+}
+
+
+/* ------------------------------------------------------------
+   REMOVE ACCIDENTAL DARK PAGE TEXT
+   ------------------------------------------------------------ */
+
+main {
+  color: #111827;
+}
+
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+
+/* ------------------------------------------------------------
+   SAFETY FOR BUTTONS WITH WHITE TEXT
+   ------------------------------------------------------------ */
+
+button[class*="bg-orange"],
+button[class*="bg-red"],
+button[class*="bg-blue"],
+button[class*="bg-green"] {
+  -webkit-text-fill-color: currentColor;
+}
+
+
+/* Orange buttons specifically */
+button[class*="bg-orange"] {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+
+/* ------------------------------------------------------------
+   HOVER TEXT
+   ------------------------------------------------------------ */
+
+.hover\:text-gray-900:hover {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+.hover\:text-gray-700:hover {
+  color: #374151 !important;
+  -webkit-text-fill-color: #374151 !important;
+}
+
+
+/* ------------------------------------------------------------
+   FORCE READABLE PROPERTY PAGE CONTENT
+   ------------------------------------------------------------ */
+
+main section h1,
+main section h2,
+main section h3,
+main section h4,
+main section p,
+main section span {
+  -webkit-text-fill-color: currentColor;
+}
+
+
+/* ------------------------------------------------------------
+   DO NOT ALLOW GLOBAL DARK TEXT TO HIDE CONTENT
+   ------------------------------------------------------------ */
+
+.text-transparent {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* ============================================================
+   NESTBOARD FINAL LIGHT THEME FIX
+   ============================================================ */
+
+/*
+   The application was receiving the `.dark` design tokens.
+   Those tokens make cards/backgrounds dark while the visibility
+   overrides make normal text dark.
+
+   Force the public application back to the intended LIGHT UI.
+*/
+
+html,
+html.dark,
+html.admin-theme,
+html.dark.admin-theme {
+  --background: #ffffff !important;
+  --foreground: #111827 !important;
+
+  --card: #ffffff !important;
+  --card-foreground: #111827 !important;
+
+  --popover: #ffffff !important;
+  --popover-foreground: #111827 !important;
+
+  --primary: #f97316 !important;
+  --primary-foreground: #ffffff !important;
+
+  --secondary: #f3f4f6 !important;
+  --secondary-foreground: #111827 !important;
+
+  --muted: #f3f4f6 !important;
+  --muted-foreground: #6b7280 !important;
+
+  --accent: #fff7ed !important;
+  --accent-foreground: #111827 !important;
+
+  --destructive: #dc2626 !important;
+
+  --border: #e5e7eb !important;
+  --input: #d1d5db !important;
+
+  --ring: #f97316 !important;
+}
+
+
+/* ------------------------------------------------------------
+   FORCE LIGHT PAGE
+   ------------------------------------------------------------ */
+
+html,
+body,
+#root {
+  background: #ffffff !important;
+  color: #111827 !important;
+}
+
+
+/* ------------------------------------------------------------
+   SHADCN / CARD COMPONENTS
+   ------------------------------------------------------------ */
+
+.bg-card {
+  background-color: #ffffff !important;
+}
+
+.text-card-foreground {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+.bg-background {
+  background-color: #ffffff !important;
+}
+
+.text-foreground {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+.bg-popover {
+  background-color: #ffffff !important;
+}
+
+.text-popover-foreground {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+
+/* ------------------------------------------------------------
+   ALL MAIN CONTENT
+   ------------------------------------------------------------ */
+
+main {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}
+
+
+/* ------------------------------------------------------------
+   PROPERTY DETAILS
+   ------------------------------------------------------------ */
+
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+main p {
+  color: #374151 !important;
+  -webkit-text-fill-color: #374151 !important;
+}
+
+main span {
+  -webkit-text-fill-color: currentColor;
+}
+
+
+/* ------------------------------------------------------------
+   CARDS
+   ------------------------------------------------------------ */
+
+main [data-slot="card"],
+main [data-slot="card-content"],
+main [data-slot="card-header"],
+main [data-slot="card-footer"] {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}
+
+
+/* ------------------------------------------------------------
+   ROOM TYPE CARDS
+   ------------------------------------------------------------ */
+
+main button {
+  -webkit-text-fill-color: currentColor;
+}
+
+main button:not([class*="bg-orange"]):not([class*="bg-primary"]) {
+  color: #111827 !important;
+}
+
+
+/* Room names */
+main button .font-medium,
+main button .font-semibold,
+main button .font-bold {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+
+/* ------------------------------------------------------------
+   PROPERTY STAT VALUES
+   ------------------------------------------------------------ */
+
+main .text-3xl,
+main .text-4xl,
+main .text-5xl {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+
+/* ------------------------------------------------------------
+   GRAY TEXT
+   ------------------------------------------------------------ */
+
+main .text-gray-950 {
+  color: #030712 !important;
+  -webkit-text-fill-color: #030712 !important;
+}
+
+main .text-gray-900 {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+main .text-gray-800 {
+  color: #1f2937 !important;
+  -webkit-text-fill-color: #1f2937 !important;
+}
+
+main .text-gray-700 {
+  color: #374151 !important;
+  -webkit-text-fill-color: #374151 !important;
+}
+
+main .text-gray-600 {
+  color: #4b5563 !important;
+  -webkit-text-fill-color: #4b5563 !important;
+}
+
+main .text-gray-500 {
+  color: #6b7280 !important;
+  -webkit-text-fill-color: #6b7280 !important;
+}
+
+main .text-gray-400 {
+  color: #9ca3af !important;
+  -webkit-text-fill-color: #9ca3af !important;
+}
+
+
+/* ------------------------------------------------------------
+   WHITE CARDS
+   ------------------------------------------------------------ */
+
+main .bg-white {
+  background-color: #ffffff !important;
+}
+
+
+/* ------------------------------------------------------------
+   GRAY BACKGROUNDS
+   ------------------------------------------------------------ */
+
+main .bg-gray-50 {
+  background-color: #f9fafb !important;
+}
+
+main .bg-gray-100 {
+  background-color: #f3f4f6 !important;
+}
+
+
+/* ------------------------------------------------------------
+   ORANGE
+   ------------------------------------------------------------ */
+
+main .text-orange-500 {
+  color: #f97316 !important;
+  -webkit-text-fill-color: #f97316 !important;
+}
+
+main .text-orange-600 {
+  color: #ea580c !important;
+  -webkit-text-fill-color: #ea580c !important;
+}
+
+main .text-orange-700 {
+  color: #c2410c !important;
+  -webkit-text-fill-color: #c2410c !important;
+}
+
+
+/* ------------------------------------------------------------
+   GREEN
+   ------------------------------------------------------------ */
+
+main .text-green-600 {
+  color: #16a34a !important;
+  -webkit-text-fill-color: #16a34a !important;
+}
+
+main .text-green-700 {
+  color: #15803d !important;
+  -webkit-text-fill-color: #15803d !important;
+}
+
+
+/* ------------------------------------------------------------
+   RED
+   ------------------------------------------------------------ */
+
+main .text-red-600 {
+  color: #dc2626 !important;
+  -webkit-text-fill-color: #dc2626 !important;
+}
+
+main .text-red-700 {
+  color: #b91c1c !important;
+  -webkit-text-fill-color: #b91c1c !important;
+}
+
+
+/* ------------------------------------------------------------
+   ORANGE BUTTONS
+   ------------------------------------------------------------ */
+
+main button.bg-orange-400,
+main button.bg-orange-500,
+main button.bg-orange-600,
+main button.bg-primary {
+  background-color: #f97316 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+main button.bg-orange-400:hover,
+main button.bg-orange-500:hover,
+main button.bg-orange-600:hover,
+main button.bg-primary:hover {
+  background-color: #ea580c !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+
+/* ------------------------------------------------------------
+   BUTTONS WITH WHITE TEXT
+   ------------------------------------------------------------ */
+
+main button.text-white,
+main button[class~="text-white"] {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+
+/* ------------------------------------------------------------
+   OUTLINE BUTTONS
+   ------------------------------------------------------------ */
+
+main button.border-gray-200,
+main button.border-gray-300 {
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+main button.border-gray-200:hover,
+main button.border-gray-300:hover {
+  background-color: #fff7ed !important;
+  border-color: #fdba74 !important;
+  color: #111827 !important;
+}
+
+
+/* ------------------------------------------------------------
+   INPUTS
+   ------------------------------------------------------------ */
+
+main input,
+main textarea,
+main select {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  caret-color: #f97316 !important;
+  border-color: #d1d5db !important;
+}
+
+main input::placeholder,
+main textarea::placeholder {
+  color: #9ca3af !important;
+  -webkit-text-fill-color: #9ca3af !important;
+}
+
+main select option {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}
+
+
+/* ------------------------------------------------------------
+   BOOKING PANEL
+   ------------------------------------------------------------ */
+
+[role="dialog"] {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}
+
+[role="dialog"] h1,
+[role="dialog"] h2,
+[role="dialog"] h3,
+[role="dialog"] h4 {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+[role="dialog"] p,
+[role="dialog"] label {
+  color: #374151 !important;
+  -webkit-text-fill-color: #374151 !important;
+}
+
+[role="dialog"] button {
+  color: #111827 !important;
+}
+
+[role="dialog"] button.bg-orange-500,
+[role="dialog"] button.bg-orange-600 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+
+/* ------------------------------------------------------------
+   IMPORTANT:
+   `bg-card` is the class causing the dark cards when the
+   `.dark` variables are active.
+   ------------------------------------------------------------ */
+
+.dark .bg-card {
+  background-color: #ffffff !important;
+}
+
+.dark .text-card-foreground {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+
+/* ------------------------------------------------------------
+   REMOVE DARK THEME EFFECT FROM THE APPLICATION
+   ------------------------------------------------------------ */
+
+.dark {
+  --background: #ffffff !important;
+  --foreground: #111827 !important;
+
+  --card: #ffffff !important;
+  --card-foreground: #111827 !important;
+
+  --popover: #ffffff !important;
+  --popover-foreground: #111827 !important;
+
+  --secondary: #f3f4f6 !important;
+  --secondary-foreground: #111827 !important;
+
+  --muted: #f3f4f6 !important;
+  --muted-foreground: #6b7280 !important;
+
+  --accent: #fff7ed !important;
+  --accent-foreground: #111827 !important;
+
+  --border: #e5e7eb !important;
+  --input: #d1d5db !important;
+}

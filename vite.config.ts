@@ -12,7 +12,7 @@ export default defineConfig({
     federation({
       name: "host",
       remotes: {
-        map_mfe: "http://localhost:5184/assets/remoteEntry.js",
+       
       },
       shared: ["react", "react-dom", "react-router", "@tanstack/react-query"],
     }),

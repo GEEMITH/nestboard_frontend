@@ -3,16 +3,23 @@ import { PropertySection } from "./components/PropertySection"
 import { PropertyInfo } from "./components/PropertyInfo"
 import { RoomList } from "./components/RoomList"
 import { usePropertyDetail } from "@/hooks/usePropertyDetail"
+import { Reviews } from "./components/Reviews"
 
 export function PropertyDetails() {
   const { id } = useParams<{ id: string }>()
-  // const property = propertyDetails.find((p) => p.id === id)
-  const { data: property, isLoading, isError } = usePropertyDetail(id)
+
+  const {
+    data: property,
+    isLoading,
+    isError,
+  } = usePropertyDetail(id)
 
   if (isLoading) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <p className="text-gray-400">Loading property...</p>
+        <p className="text-gray-400">
+          Loading property...
+        </p>
       </div>
     )
   }
@@ -23,14 +30,20 @@ export function PropertyDetails() {
         <p className="text-xl font-semibold text-gray-700">
           Property not found
         </p>
-        <p className="text-sm text-gray-400">No property matches id: {id}</p>
+
+        <p className="text-sm text-gray-400">
+          No property matches id: {id}
+        </p>
       </div>
     )
   }
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <PropertySection image={property.image} rating={property.rating} />
+      <PropertySection
+        image={property.image}
+        rating={property.rating}
+      />
 
       <div className="px-4 pb-12">
         <div className="relative z-10 -mt-12">
@@ -38,14 +51,23 @@ export function PropertyDetails() {
             title={property.title}
             address={property.address}
             amenities={property.amenities}
-            seatsAvailable={property.seatsAvailable}
+            seatsAvailable={
+              property.seatsAvailable
+            }
             minStay={property.minStay}
-            startingPrice={property.startingPrice}
+            startingPrice={
+              property.startingPrice
+            }
           />
         </div>
 
-        <div className="mt-5">
-          <RoomList rooms={property.rooms} />
+        <div className="mx-auto mt-5 max-w-5xl">
+          <RoomList
+            propertyId={property.id}
+            rooms={property.rooms}
+          />
+
+          <Reviews propertyId={property.id} />
         </div>
       </div>
     </div>

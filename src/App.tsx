@@ -1,20 +1,33 @@
-import { BrowserRouter, Route, Routes, Outlet } from "react-router"
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  Outlet,
+} from "react-router"
 import { Home } from "./pages/home/Home"
 import { PropertyDetails } from "./pages/property/PropertyDetails"
-import { Navbar, type NavbarLink } from "./components/common/Navbar"
+import {
+  Navbar,
+  type NavbarLink,
+} from "./components/common/Navbar"
 import { MapRoute } from "./components/common/MapRoute"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import { SignIn } from "./pages/Auth/SignIn"
+import { SignUp } from "./pages/Auth/SignUp"
 import { Dashboard } from "./pages/dashboard/Dashboard"
 import { ProtectedRoute } from "./components/auth/ProtectedRoute"
 import { AdminDashboard } from "./pages/admin/AdminDashboard"
 import { AdminProtectedRoute } from "./components/auth/AdminProtectedRoute"
 import { AdminThemeApplier } from "./components/auth/AdminThemeApplier"
+import { MyBookings } from "./pages/bookings/MyBookings"
+import { SavedProperties } from "./pages/saved/SavedProperties"
+import { Profile } from "./pages/profile/Profile"
+import { Notifications } from "./pages/notifications/Notifications"
 
 const navLinks: NavbarLink[] = [
   { label: "Explore", to: "/" },
   { label: "Map View", to: "/map" },
-  { label: "Dashboard", to: "/dashboard" },
+  { label: "My Bookings", to: "/bookings" },
 ]
 
 function AppLayout() {
@@ -32,9 +45,39 @@ export function App() {
       <AdminThemeApplier>
         <Routes>
           <Route element={<AppLayout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/property-details/:id" element={<PropertyDetails />} />
-            <Route path="/map" element={<MapRoute />} />
+            <Route
+              path="/"
+              element={<Home />}
+            />
+
+            <Route
+              path="/property-details/:id"
+              element={<PropertyDetails />}
+            />
+
+            <Route
+              path="/map"
+              element={<MapRoute />}
+            />
+
+            <Route
+              path="/bookings"
+              element={
+                <ProtectedRoute>
+                  <MyBookings />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/saved"
+              element={
+                <ProtectedRoute>
+                 <SavedProperties />
+                </ProtectedRoute>
+              }
+            />
+
             <Route
               path="/dashboard"
               element={
@@ -43,6 +86,7 @@ export function App() {
                 </ProtectedRoute>
               }
             />
+
             <Route
               path="/admin"
               element={
@@ -52,11 +96,40 @@ export function App() {
               }
             />
           </Route>
-          <Route path="/sign-in/*" element={<SignIn />} />
+
+          <Route
+  path="/profile"
+  element={
+    <ProtectedRoute>
+      <Profile />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/notifications"
+  element={
+    <ProtectedRoute>
+      <Notifications />
+    </ProtectedRoute>
+  }
+/>
+
+          <Route
+            path="/sign-in"
+            element={<SignIn />}
+          />
+
+          <Route
+            path="/sign-up"
+            element={<SignUp />}
+          />
         </Routes>
+
         <ReactQueryDevtools initialIsOpen={false} />
       </AdminThemeApplier>
     </BrowserRouter>
   )
 }
+
 export default App
